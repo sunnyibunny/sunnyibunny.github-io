@@ -4,50 +4,11 @@
   
   
   <entry>
-    <title>sunny</title>
-    <link href="/2023/07/14/sunny/"/>
-    <url>/2023/07/14/sunny/</url>
+    <title>字符串整合</title>
+    <link href="/2023/07/15/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/"/>
+    <url>/2023/07/15/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/</url>
     
-    <content type="html"><![CDATA[<h2 id="��һ��"><a href="#��һ��" class="headerlink" title="��һ��"></a>��һ��</h2><h2 id="�ڶ���"><a href="#�ڶ���" class="headerlink" title="�ڶ���"></a>�ڶ���</h2>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>test</title>
-    <link href="/2023/07/14/test-1/"/>
-    <url>/2023/07/14/test-1/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>test</title>
-    <link href="/2023/01/16/test/"/>
-    <url>/2023/01/16/test/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>first</title>
-    <link href="/2023/01/16/first/"/>
-    <url>/2023/01/16/first/</url>
-    
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="char类型字符数组"><a href="#char类型字符数组" class="headerlink" title="char类型字符数组"></a>char类型字符数组</h2><pre><code class="hljs"> 需包含头文件&lt;cstring.h&gt;</code></pre><ul><li>常用ASCII码</li></ul><pre><code class="hljs">| 数字 | 对应字符 ||:------:|:--------:||32|空格||48|0||65|A||97|a|</code></pre><ul><li>常用函数</li></ul><ol><li><p>strlen()</p><p>原型:<code>size_t strlen(char const* string);</code></p><p>返回有效长度（不包括<code>\0</code>），<code>sizeof()</code>包括<code>\0</code>。</p></li><li><p>strcmp()</p><p>原型：<code>int strcmp(char const *s1, char const *s2, size_t len);</code></p><p> 比较两个字符串：如果s1小于s2，strcmp函数返回一个负值。如果s1大于s2，函数返回一个大于正值。如果两个字符串相等，函数就返回零。</p></li><li><p>strcat()</p><p>原型：<code>char *strcat(char *dst, char const *src,int len);</code></p><p>第一个参数必须是数组名，第二个参数可以是字符串常量。</p></li><li><p>strcpy()</p><p>原型：<code>char *strcpy(char *dst, char const *src);</code></p></li></ol><ul><li>输入函数</li></ul><ol><li><p><code>cin&gt;&gt;</code></p><p>将回车、空格都识别为字符串的结束，只能读入不含空格的字符串。</p></li><li><p><code>cin.get()</code><font color = 'wheat'>（包括空格和回车）</font></p><p>从输入行中取出<font color = 'tan'>一个字符</font>，并将其赋给字符型变量。</p><p><code>cin.get(char ch)</code>或<code>ch = cin.get()</code></p><p> <strong><code>cin.get()</code>可吃掉滞留缓存的<code>\n</code></strong></p></li><li><p><code>getchar()</code><font color = 'wheat'>（包括回车和空格）</font></p><p>读入的是ASCII码，得到的字符可以赋给<font color = 'tan'>一个字符</font>或整型变量，也可以不赋给任何变量，作为表达式一部分。</p></li><li><p><code>cin.getline()</code><font color = 'wheat'>（包括空格）</font></p><p><code>cin.geiline(char *array，int cnt，char ch)</code></p><p> 其中，第一个参数为读入的数组，第二个参数为读入个数，第三个参数为结束字符（该字符不输出）。</p><p>读入<font color = 'tan'>一行字符</font>，将<code>\n</code>丢弃，并替换为<code>\0</code>存入数组。</p></li></ol><h2 id="string类型字符串"><a href="#string类型字符串" class="headerlink" title="string类型字符串"></a>string类型字符串</h2><pre><code class="hljs"> 需包含头文件&lt;string.h&gt;</code></pre>]]></content>
     
     
     
