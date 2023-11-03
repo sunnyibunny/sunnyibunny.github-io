@@ -279,12 +279,12 @@
 <p> 判断newcap的合法性</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">recap</span><span class="hljs-params">(<span class="hljs-type">int</span> newcap)</span></span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">if</span>(newcap &lt; <span class="hljs-number">0</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        T* olddata = data;<br>        data = <span class="hljs-keyword">new</span> T[newcap];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; length;i ++)<br>        &#123;<br>            data[i] = olddata[i];<br>        &#125;<br>        <span class="hljs-keyword">delete</span>[]olddata;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li><p><strong>顺序表的建立</strong>：void createList(T a[],int n)</p>
-<p>  <font color = Feldspar>先判断顺序表是否已满（length == capacity)</Font>,如果已满，则扩容。</p>
+<p>  <font color="Feldspar">先判断顺序表是否已满（length == capacity),如果已满，则扩容。</font></p>
 </li>
 <li><p><strong>构造函数</strong></p>
 </li>
 <li><p><strong>拷贝构造函数</strong>：</p>
-<p>  <font color = Feldspar>注意仍需为指针data申请空间（data = new T[capacity]）</font></p>
+<p>  <font color="Feldspar">注意仍需为指针data申请空间（data = new T[capacity]）</font></p>
 </li>
 <li><p><strong>析构函数</strong></p>
 </li>
@@ -293,14 +293,14 @@
 <li><p><strong>求顺序表的长度</strong>：int GetLength()</p>
 </li>
 <li><p><strong>求顺序表中序号为i的元素值</strong>：bool GetElem(i)</p>
-<p>  <font color = Feldspar>先判断i是否合法</font></p>
+<p>  <font color="Feldspar">先判断i是否合法</font></p>
 </li>
 <li><p><strong>在顺序表插入e作为第i个元素</strong>：bool Insert(int i,T e)</p>
-<p>   <font color = feldspar>先判断i是否合法，再确定是否扩容</font> </p>
+<p>   <font color="feldspar">先判断i是否合法，再确定是否扩容</font> </p>
 <p>  (recap在插入中仅调用一次，其平摊时间为O（1）)</p>
 </li>
 <li><p><strong>删除第i个元素</strong>：bool Delete（int i)</p>
-<p>   <font color= fredspar> 如果满足缩容条件(length &lt; 1/4 capacity)则缩容</font></p>
+<p>   <font color="fredspar"> 如果满足缩容条件(length &lt; 1/4 capacity)则缩容</font></p>
 </li>
 <li><p><strong>输出顺序表中所有元素</strong>:void DispList()</p>
 </li>
@@ -310,14 +310,14 @@
 <p>以下方法时间复杂度均为O(n),空间复杂度O(1)</p>
 <p>  1.整体建表法：遍历L,将非x的值写入L1(实际上L1可以与L共用空间，只需另设k记录个数即可)。</p>
 <p>  2.元素移动法</p>
-<p>  3.<font color = fledspar>区间划分法</font>：前端为非x的区间，后段为x的区间，分别设置指针从前往后、从后往前遍历，如果不满足，则交换。</p>
+<p>  3.<font color="fledspar">区间划分法</font>：前端为非x的区间，后段为x的区间，分别设置指针从前往后、从后往前遍历，如果不满足，则交换。</p>
 <blockquote>
 <p>Leetcode26:删除排序数组中的重复项</p>
 </blockquote>
-<p>  <font color = fledspar>快慢指针法</font></p>
+<p>  <font color="fledspar">快慢指针法</font></p>
   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">removeDuplicates</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> slow =  <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> fast = <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">while</span>(fast != n)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(nums[fast] != nums[fast - <span class="hljs-number">1</span>])<br>            &#123;<br>                nums[slow] = nums[fast];<br>                slow ++;<br>            &#125;<br>            fast ++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> slow;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure></li>
 <li><p><strong>有序顺序表—二路归并</strong></p>
-<p><font color = fledspar>考虑某一路仍未归并完的元素</font></p>
+<p><font color="fledspar">考虑某一路仍未归并完的元素</font></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>  <span class="hljs-type">int</span> a[<span class="hljs-number">100</span>] = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>&#125;;<br>  <span class="hljs-type">int</span> b[<span class="hljs-number">100</span>] = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>&#125;;<br>  SqList&lt;<span class="hljs-type">int</span>&gt;<span class="hljs-built_in">A</span>(a,<span class="hljs-number">4</span>),<span class="hljs-built_in">B</span>(b,<span class="hljs-number">5</span>),<span class="hljs-built_in">C</span>(<span class="hljs-number">100</span>);<br>  <span class="hljs-type">int</span> i =<span class="hljs-number">0</span>,j = <span class="hljs-number">0</span>,k = <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">while</span>(i &lt; A.length &amp;&amp; j &lt; B.length)<br>  &#123;<br>      <span class="hljs-keyword">if</span>(A.data[i] &lt; B.data[j])<br>      &#123;<br>          C.data[k ++] = A.data[i ++];<br>      &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(A.data[i] &gt; B.data[j])<br>      &#123;<br>          C.data[k ++] = B.data[j ++];<br>      &#125;<br>      <span class="hljs-keyword">else</span><br>      &#123;<br>          C.data[k ++] = A.data[i ++];<br>          j ++;<span class="hljs-comment">//需另外判断，否则会重复记入</span><br>      &#125;<br>  &#125;<br>  <span class="hljs-keyword">while</span>(i &lt; A.length)<span class="hljs-comment">//如果A中有元素没有归并完，将剩下的元素写入C中</span><br>  &#123;<br>      C.data[k ++] = A.data[i ++];<br>  &#125;<br>  <span class="hljs-keyword">while</span>(j &lt; B.length)<span class="hljs-comment">//B</span><br>  &#123;<br>      C.data[k ++] = B.data[j ++];<br>  &#125;<br>  <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>;i &lt; k;i ++)<br>      cout&lt;&lt;C.data[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li><p><strong>求升序序列A和B的中位数（元素个数均为n)</strong></p>
 <p>二路归并到第n次，归并元素就是中位数（比较两元素较小值）</p>
@@ -385,7 +385,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/29/%E9%93%BE%E8%A1%A8LinkList/" title="">
+                      <a href="/2023/10/29/%E9%93%BE%E8%A1%A8Linklist/" title="">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>

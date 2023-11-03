@@ -19,16 +19,16 @@
     <meta name="description" content="链表LinkList 单链表基本操作123456789101112131415161718192021&amp;#123;    template&lt;class T&gt;    class LinkList;    template&lt;class T&gt;    class LinkNode    &amp;#123;    public:        friend class LinkList&amp;l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2023/10/29/%E9%93%BE%E8%A1%A8LinkList/index.html">
+<meta property="og:url" content="http://example.com/2023/10/29/%E9%93%BE%E8%A1%A8Linklist/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="链表LinkList 单链表基本操作123456789101112131415161718192021&amp;#123;    template&lt;class T&gt;    class LinkList;    template&lt;class T&gt;    class LinkNode    &amp;#123;    public:        friend class LinkList&amp;l">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/sunnyibunny/sunnyibunny.github.io/blob/84ba5d26d467093d7a9343bc9044cd44bbad99e2/img/drawio.png">
+<meta property="og:image" content="http://example.com/2023/10/29/%E9%93%BE%E8%A1%A8Linklist/drawio.png">
 <meta property="article:published_time" content="2023-10-29T02:19:06.520Z">
-<meta property="article:modified_time" content="2023-10-29T02:57:54.923Z">
+<meta property="article:modified_time" content="2023-11-03T12:58:30.041Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://github.com/sunnyibunny/sunnyibunny.github.io/blob/84ba5d26d467093d7a9343bc9044cd44bbad99e2/img/drawio.png">
+<meta name="twitter:image" content="http://example.com/2023/10/29/%E9%93%BE%E8%A1%A8Linklist/drawio.png">
   
   
   
@@ -277,14 +277,14 @@
                 <h1 id="链表LinkList"><a href="#链表LinkList" class="headerlink" title="链表LinkList"></a>链表LinkList</h1><hr>
 <h2 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&gt;<br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">LinkList</span>;<br>    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&gt;<br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">LinkNode</span><br>    &#123;<br>    <span class="hljs-keyword">public</span>:<br>        <span class="hljs-keyword">friend</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LinkList</span>&lt;T&gt;;<br>        T data;<br>        LinkNode&lt;T&gt;* next;<br>        <span class="hljs-built_in">LinkNode</span>&lt;T&gt;(T d):<span class="hljs-built_in">data</span>(d),<span class="hljs-built_in">next</span>(<span class="hljs-literal">NULL</span>)&#123;&#125;<br>    &#125;;<br>    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&gt;<br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">LinkList</span><br>    &#123;<br>    <span class="hljs-keyword">public</span>:<br>        LinkNode&lt;T&gt;* head;<br>        <span class="hljs-built_in">LinkList</span>&lt;T&gt;()&#123;head  = <span class="hljs-keyword">new</span> <span class="hljs-built_in">LinkNode</span>&lt;T&gt;(<span class="hljs-number">-1</span>);&#125;<span class="hljs-comment">//构造函数一定要赋初值，否则运用时head-&gt;next为空会报错</span><br>        ~<span class="hljs-built_in">LinkList</span>&lt;T&gt;();<br>    &#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h4 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&gt;<br>    LinkList&lt;T&gt;::~<span class="hljs-built_in">LinkList</span>&lt;T&gt;()<br>    &#123;<br>        LinkNode&lt;T&gt;* p1,*p2;<br>        p1 = head,p2 = head -&gt; next;<br>        <span class="hljs-keyword">while</span>(p2 != <span class="hljs-literal">NULL</span>)<br>        &#123;<br>            <span class="hljs-keyword">delete</span> p1;<br>            p1 = p2;<br>            p2 = p2 -&gt; next;<br>        &#125;<br>        <span class="hljs-keyword">delete</span> p1;<span class="hljs-comment">//不要忘记释放最后一个</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="整体建立单链表-—void-CreateList"><a href="#整体建立单链表-—void-CreateList" class="headerlink" title="整体建立单链表 —void CreateList( )"></a>整体建立单链表 —void CreateList( )</h4><p><font color = fledspar>可以根据题目实际需求合理使用头插法和尾插法</font></p>
+<h4 id="整体建立单链表-—void-CreateList"><a href="#整体建立单链表-—void-CreateList" class="headerlink" title="整体建立单链表 —void CreateList( )"></a>整体建立单链表 —void CreateList( )</h4><p><font color="fledspar">可以根据题目实际需求合理使用头插法和尾插法</font></p>
 <ul>
 <li><p>头插法:生成的链表是反序的</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>  <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&gt;<br>  <span class="hljs-type">void</span> LinkList&lt;T&gt;:: <span class="hljs-built_in">CreateListF</span>(T a[],<span class="hljs-type">int</span> n)<span class="hljs-comment">//如果要按顺序删除则使用尾插法较合理</span><br>  &#123;<br>      <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; n;i ++)<br>      &#123;<br>          LinkNode&lt;T&gt;* s = <span class="hljs-keyword">new</span> <span class="hljs-built_in">LinkNode</span>&lt;T&gt;(a[i]);<br>          s -&gt; next = head -&gt; next;<br>          head -&gt; next = s;<br>      &#125;<br>  &#125;<br><br>  &#125;<br></code></pre></td></tr></table></figure></li>
 <li><p>尾插法</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>  <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">CreateListR</span><span class="hljs-params">(T a[],<span class="hljs-type">int</span> n)</span></span><br><span class="hljs-function">  </span>&#123;<br>      LinkNode&lt;T&gt; * s,* r;<br>      r = head;<br>      <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt; n;i ++)<br>      &#123;<br>          s = <span class="hljs-keyword">new</span> <span class="hljs-built_in">LinkNode</span>&lt;T&gt;(a[i]);<br>          r -&gt; next = s;<br>          r = s;<br>      &#125;<br>      r -&gt; next = <span class="hljs-literal">NULL</span>；<span class="hljs-comment">//不要忘记尾部指针置空</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="返回序号为i的节点—LinkNode-geti-int-i"><a href="#返回序号为i的节点—LinkNode-geti-int-i" class="headerlink" title="返回序号为i的节点—LinkNode* geti(int i)"></a>返回序号为i的节点—LinkNode<T>* geti(int i)</h4><p>注意判断i的合法性</p>
+<h4 id="返回序号为i的节点—LinkNode-geti-int-i"><a href="#返回序号为i的节点—LinkNode-geti-int-i" class="headerlink" title="返回序号为i的节点—LinkNode* geti(int i)"></a>返回序号为i的节点—LinkNode<T>* geti(int i)</T></h4><p>注意判断i的合法性</p>
 <h4 id="将元素e的节点添加到单链表末尾—void-Add-e"><a href="#将元素e的节点添加到单链表末尾—void-Add-e" class="headerlink" title="将元素e的节点添加到单链表末尾—void Add(e)"></a>将元素e的节点添加到单链表末尾—void Add(e)</h4><h4 id="求单链表的长度—int-GetLength"><a href="#求单链表的长度—int-GetLength" class="headerlink" title="求单链表的长度—int GetLength()"></a>求单链表的长度—int GetLength()</h4><h4 id="求单链表中序号为i的结点值—bool-GetElem-int-i-T-amp-e"><a href="#求单链表中序号为i的结点值—bool-GetElem-int-i-T-amp-e" class="headerlink" title="求单链表中序号为i的结点值—bool GetElem(int i,T&amp; e);"></a>求单链表中序号为i的结点值—bool GetElem(int i,T&amp; e);</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>  <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">GetElem</span><span class="hljs-params">(<span class="hljs-type">int</span> i,T&amp; e)</span></span><br><span class="hljs-function">  </span>&#123;<br>      <span class="hljs-keyword">if</span>(i &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>      LinkNode&lt;T&gt; * p = <span class="hljs-built_in">geti</span>(i);<br>      <span class="hljs-keyword">if</span>(p != <span class="hljs-literal">NULL</span>)<br>      &#123;<br>          e = p -&gt; data;<br>          <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span><br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h4 id="设置单链表中序号为i的结点值—bool-SetElem（int-i-T-e"><a href="#设置单链表中序号为i的结点值—bool-SetElem（int-i-T-e" class="headerlink" title="设置单链表中序号为i的结点值—bool SetElem（int i,T e)"></a>设置单链表中序号为i的结点值—bool SetElem（int i,T e)</h4><h4 id="求单链表中第一个值为e的结点的序号—int-GetNo-T-e"><a href="#求单链表中第一个值为e的结点的序号—int-GetNo-T-e" class="headerlink" title="求单链表中第一个值为e的结点的序号—int GetNo(T e)"></a>求单链表中第一个值为e的结点的序号—int GetNo(T e)</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>  <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">GetNo</span><span class="hljs-params">(T e)</span></span><br><span class="hljs-function">  </span>&#123;<br>      <span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;<br>      LinkNode&lt;T&gt; *p = head-&gt;next;<br>      <span class="hljs-keyword">while</span>(p != <span class="hljs-literal">NULL</span> &amp;&amp;   p -&gt; data != e)<br>      &#123;<br>          j ++;<br>          p = p -&gt; next;<br>      &#125;<br>      <span class="hljs-keyword">if</span>(p == <span class="hljs-literal">NULL</span>)<br>          <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>      <span class="hljs-keyword">else</span><br>          <span class="hljs-keyword">return</span> j;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h4 id="插入元素e作为第i个结点—bool-Insert（int-i-T-e）"><a href="#插入元素e作为第i个结点—bool-Insert（int-i-T-e）" class="headerlink" title="插入元素e作为第i个结点—bool Insert（int i,T e）"></a>插入元素e作为第i个结点—bool Insert（int i,T e）</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>  <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">Insert</span><span class="hljs-params">(<span class="hljs-type">int</span> i,T e)</span></span><br><span class="hljs-function">  </span>&#123;<br>      <span class="hljs-keyword">if</span>(i &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>      LinkNode&lt;T&gt;* p = <span class="hljs-built_in">geti</span>(i - <span class="hljs-number">1</span>);<br>      <span class="hljs-keyword">if</span>(p != <span class="hljs-literal">NULL</span>)<br>      &#123;<br>          LinkNode&lt;T&gt;* s = <span class="hljs-keyword">new</span> LinkNode&lt;T&gt; e;<br>          s -&gt; next = p -&gt; next;<br>          p -&gt; next = s;<br>          <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>      &#125;<br>      <span class="hljs-keyword">else</span><br>          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -294,7 +294,7 @@
 <li><p>计数法</p>
 <p>长度n,查找（n - 1) / 2 + 1</p>
 </li>
-<li><p><font color = fledspar>快慢指针法</font></p>
+<li><p><font color="fledspar">快慢指针法</font></p>
 <p>快指针fast 慢指针slow，首先均指向首结点，每次让慢指针slow后移一个结点，快指针fast后移两个。</p>
 <ul>
 <li>若n为奇数，循环结束时fast指向尾结点，slow指向唯一中间结点。</li>
@@ -317,11 +317,11 @@
 时间复杂度：O(n)</li>
 </ul>
 <p>空间复杂度：O(1)</p>
-<h4 id="逆置—void-Reverse（LinkList-amp-L"><a href="#逆置—void-Reverse（LinkList-amp-L" class="headerlink" title="逆置—void Reverse（LinkList &amp;L)"></a>逆置—void Reverse（LinkList<T> &amp;L)</h4><ul>
+<h4 id="逆置—void-Reverse（LinkList-amp-L"><a href="#逆置—void-Reverse（LinkList-amp-L" class="headerlink" title="逆置—void Reverse（LinkList &amp;L)"></a>逆置—void Reverse（LinkList<T> &amp;L)</T></h4><ul>
 <li>头插法建表空间复杂度O(1)<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> T&gt;</span><br><span class="hljs-function">  <span class="hljs-type">void</span> <span class="hljs-title">Reverse1</span><span class="hljs-params">(LinkList&lt;T&gt;&amp; L)</span></span><br><span class="hljs-function">  </span>&#123;<br>      LinkNode&lt;T&gt;* p = L.head -&gt; next,*q;<br>      L.head -&gt; next = <span class="hljs-literal">NULL</span>;<span class="hljs-comment">//</span><br>      <span class="hljs-keyword">while</span>(p != <span class="hljs-literal">NULL</span>)<br>      &#123;<br>          q = p -&gt; next;<br>          p -&gt; next = L.head -&gt; next;<br>          L.head -&gt; next = p;<br>          p = q;<br>      &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li>当L为空或只有一个结点时返回，两个结点时直接逆置，三个及以上结点时，采用三个同步指针p、q、r,操作如图所示</li>
 </ul>
-<p><img src="https://github.com/sunnyibunny/sunnyibunny.github.io/blob/84ba5d26d467093d7a9343bc9044cd44bbad99e2/img/drawio.png" srcset="/img/loading.gif" lazyload alt="img/drawio.png" title="img/drawio.png"></p>
+<p><img src="/2023/10/29/%E9%93%BE%E8%A1%A8Linklist/drawio.png" srcset="/img/loading.gif" lazyload alt="链表逆置方法二"> </p>
 <h2 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h2><h3 id="基本操作-1"><a href="#基本操作-1" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&gt;<br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">DLinkNode</span><br>    &#123;<br>        T data;<br>        DLinkNode&lt;T&gt;* next;<br>        DLinkNode&lt;T&gt;* prior;<br>        <span class="hljs-built_in">DLinkNode</span>():<span class="hljs-built_in">next</span>(<span class="hljs-literal">NULL</span>),<span class="hljs-built_in">prior</span>(<span class="hljs-literal">NULL</span>)&#123;&#125;;<br>        <span class="hljs-built_in">DLinkNode</span>(T d):<span class="hljs-built_in">data</span>(d),<span class="hljs-built_in">next</span>(<span class="hljs-literal">NULL</span>),<span class="hljs-built_in">prior</span>(<span class="hljs-literal">NULL</span>)&#123;&#125;;<br>    &#125;;<br>    <span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span>&gt;<br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">DLinkList</span><br>    &#123;<br>        <span class="hljs-keyword">public</span>:<br>        CLinkNode&lt;T&gt;* dhead;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h4 id="插入结点"><a href="#插入结点" class="headerlink" title="插入结点"></a>插入结点</h4><p>p后插入s</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs C++">&#123;<br>    s -&gt;next = p -&gt; next;<br>    <span class="hljs-keyword">if</span>(p -&gt; next != <span class="hljs-literal">NULL</span>)p -&gt; next -&gt; prior = s;<span class="hljs-comment">//需先判断是不是尾结点</span><br>    p -&gt; next = s;<br>    s -&gt; prior = p;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -334,18 +334,18 @@
 <ul>
 <li>可变长的动态数组，可根据下标随机访问/修改某个元素。</li>
 <li>如果动态分配的存储空间大于实际需要的空间，则不必重新分配空间，此时添加新元素的时间为常数；反之，则按两倍扩容，此时添加新元素的时间和数组中的元素个数成正比。<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3></li>
-<li>vector<int> a(10); //定义了10个整型元素的向量（尖括号中为元素类型名，它可以是任何合法的数据类型），但没有给出初值，其值是不确定的</li>
-<li>vector<int> a(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1</li>
-<li>vector<int> a(b); //用b向量来创建a向量，整体复制性赋值</li>
-<li>vector<int> a(b.begin(),b.begin+3); //定义了a值为b中第0个到第2个（共3个）元素</li>
-<li>int b[7]={1,2,3,4,5,9,8};vector<int> a(b,b+7); //从数组中获得初值</li>
+<li>vector<int> a(10); //定义了10个整型元素的向量（尖括号中为元素类型名，它可以是任何合法的数据类型），但没有给出初值，其值是不确定的</int></li>
+<li>vector<int> a(10,1); //定义了10个整型元素的向量,且给出每个元素的初值为1</int></li>
+<li>vector<int> a(b); //用b向量来创建a向量，整体复制性赋值</int></li>
+<li>vector<int> a(b.begin(),b.begin+3); //定义了a值为b中第0个到第2个（共3个）元素</int></li>
+<li>int b[7]={1,2,3,4,5,9,8};vector<int> a(b,b+7); //从数组中获得初值</int></li>
 </ul>
 <h3 id="重要操作"><a href="#重要操作" class="headerlink" title="重要操作"></a>重要操作</h3><ul>
 <li>a.back(); //返回a的最后一个元素</li>
 <li>a.front(); //返回a的第一个元素</li>
 <li>a.begin();//返回第一个元素的指针</li>
 <li>a.end();//返回最后一个元素后一位置的指针</li>
-<li>a[i]; //返回a的第i个元素，当且仅当a[i]存在,<font  color= fledspar>下标只能获取已存在的元素</font></li>
+<li>a[i]; //返回a的第i个元素，当且仅当a[i]存在,<font color="fledspar">下标只能获取已存在的元素</font></li>
 </ul>
 <hr>
 <ul>
@@ -373,7 +373,7 @@
 </ul>
 <h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ul>
 <li><p>内置数据类型<br>sort（p.begin(),p.end())</p>
-<p>默认以less<T>实现递增排序，为实现递减排序，需调用greater<T>函数：sort(p.begin(),p.end(),greater<T>)</p>
+<p>默认以less<T>实现递增排序，为实现递减排序，需调用greater<T>函数：sort(p.begin(),p.end(),greater<T>)</T></T></T></p>
 </li>
 <li><p>自定义数据类型</p>
 <ul>
@@ -384,10 +384,10 @@
 </ul>
 <h2 id="list链表容器"><a href="#list链表容器" class="headerlink" title="list链表容器"></a>list链表容器</h2><p>循环双链表，不支持随机访问</p>
 <h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><ul>
-<li>list<A> l1;</li>
-<li>list<A> l2(10);</li>
-<li>list<A> l3(10,1.23);</li>
-<li>list<A> l4(a,a + 5);//a为数组</li>
+<li>list<A> l1;</A></li>
+<li>list<A> l2(10);</A></li>
+<li>list<A> l3(10,1.23);</A></li>
+<li>list<A> l4(a,a + 5);//a为数组</A></li>
 </ul>
 <h3 id="基本操作-4"><a href="#基本操作-4" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
 <li>void push_front(const T&amp; x);    // 头部添加</li>
@@ -410,7 +410,7 @@
 <li>void resize(size_type n, T x=T());    // 调整list对象的大小</li>
 </ul>
 <hr>
-<p><font color = fredspar>list型容器不提供成员函数at()和操作符operator[],可以使用迭代器进行元素的访问.</font></p>
+<p><font color="fredspar">list型容器不提供成员函数at()和操作符operator[],可以使用迭代器进行元素的访问.</font></p>
 <ul>
 <li>begin()        // 返回指向容器中第一个元素的双向迭代器。</li>
 <li>end()        // 返回指向容器中最后一个元素所在位置的下一个位置的双向迭代器。</li>
@@ -436,7 +436,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div></div>
-      <div>http://example.com/2023/10/29/链表LinkList/</div>
+      <div>http://example.com/2023/10/29/链表Linklist/</div>
     </div>
     <div class="license-meta">
       
